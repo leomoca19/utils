@@ -5,6 +5,8 @@ Clear-Host
 Get-ChildItem $SOURCE
 
 $dev = $SOURCE
+$here = ""
+
 function restart {
 	$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 	Write-Host "Path refreshed" -ForegroundColor Cyan
@@ -32,3 +34,16 @@ function gitacp {
 	git add .; git commit -m $msg; git push
 }
 
+function here {
+	param ([string]$path)
+	Write-Host $here
+	$here = Get-Location 
+	Write-Host "Function under construction: set var 'here' to arg path if path is not empty"
+	Write-Host "Location saved $here" -ForegroundColor Cyan
+}
+
+function back {
+
+	Set-Location "$here"
+	Write-Host "Function under construction: add case when var here is empty"
+}
