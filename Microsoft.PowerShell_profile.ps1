@@ -2,6 +2,7 @@ Set-variable -Name Global:SOURCE -value "C:/src/" -Option ReadOnly -Force
 Set-Variable -Name Global:CLOUD -Value "$HOME/My Drive/" -Option ReadOnly -Force
 
 Clear-Host
+Get-ChildItem $SOURCE
 
 $dev = $SOURCE
 function restart {
