@@ -47,3 +47,8 @@ function back {
 	Set-Location "$here"
 	Write-Host "Function under construction: add case when var here is empty"
 }
+
+# To do:
+# function to add a path to $PATH
+# finish here  and back fucntions
+# figure how to persist changes on an object declared at first run of profile script
