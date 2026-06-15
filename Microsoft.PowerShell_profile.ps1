@@ -54,6 +54,10 @@ function clone {
 	param ([string]$repo)
 	git clone "https://github.com/leomoca19/$repo"
 }
+
+function matrix {
+	ssh lde-la-mora-caceres@matrix.senecapolytechnic.ca
+}
 # To do:
 # function to add a path to $PATH
 # finish here  and back fucntions
