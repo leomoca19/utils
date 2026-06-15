@@ -48,6 +48,9 @@ function back {
 	Write-Host "Function under construction: add case when var here is empty"
 }
 
+function matrix {
+	ssh lde-la-mora-caceres@matrix.senecapolytechnic.ca
+}
 # To do:
 # function to add a path to $PATH
 # finish here  and back fucntions
