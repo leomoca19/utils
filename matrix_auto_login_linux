@@ -1,0 +1,14 @@
+matrix() {
+    local KEY_PATH="$HOME/.ssh/id_ed25519"
+    local REMOTE="lde-la-mora-caceres@matrix.senecapolytechnic.ca"
+
+    if [ ! -f "${KEY_PATH}.pub" ]; then
+        echo "[Matrix Tool] No SSH key found. Generating Ed25519 pair..."
+        ssh-keygen -t ed25519 -f "$KEY_PATH" -N ""
+        
+        echo "[Matrix Tool] Staging key to Matrix server..."
+        scp "${KEY_PATH}.pub" "${REMOTE}:~/.key"
+    fi
+
+    ssh "$REMOTE"
+}
