@@ -48,6 +48,12 @@ function back {
 	Write-Host "Function under construction: add case when var here is empty"
 }
 
+# Clones a repo from leomoca19
+# It really is just a shortcut for cloning my own repos
+function clone {
+	param ([string]$repo)
+	git clone "https://github.com/leomoca19/$repo"
+}
 # To do:
 # function to add a path to $PATH
 # finish here  and back fucntions
