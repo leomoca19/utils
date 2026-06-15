@@ -56,7 +56,19 @@ function clone {
 }
 
 function matrix {
-	ssh lde-la-mora-caceres@matrix.senecapolytechnic.ca
+	$KeyPath = "$HOME/.ssh/id_ed25519"
+	$Remote = "lde-la-mora-caceres@matrix.senecapolytechnic.ca"
+
+	if(-not (Test-Path "${KeyPath}.pub")) {
+		Write-Host "No SSH key found. Generating ed25519 pair..." -ForegroundColor Cyan
+
+		ssh-keygen -t ed25519 -f $KeyPath -N '""'
+
+		Write-Host "Staging key to matrix..." -ForegroundColor Cyan
+		scp "${KeyPath}.pub" "${Remote}:~/.key"
+	}
+
+	ssh $Remote
 }
 # To do:
 # function to add a path to $PATH
